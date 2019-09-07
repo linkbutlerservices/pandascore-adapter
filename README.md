@@ -1,4 +1,4 @@
-# Customizer Custom Controls #
+# Pandascore esports match results #
 
 **Author:** Link Butler  
 **Author URI:** https://link-butler.com  
