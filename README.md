@@ -94,5 +94,5 @@ API_KEY=apikey ./pandascore-adapter
 #### Docker
 ##### Run the container:
 ```
-docker run -it -e API_KEY=apikey -p 8080:8080 linkbutlerservices/pandascore-adapter
+docker run -it -e API_KEY=apikey -p 8080:8080 linkbutler/pandascore-adapter
 ```
