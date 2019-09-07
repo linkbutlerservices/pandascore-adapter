@@ -53,12 +53,12 @@ Result :
 ```
 ##### Request with curl
 ```
-curl -X POST -H 'Content-Type: application/json' \
+curl -X POST -H 'Content-Type: application/json' http://localhost:8080 \
 -d @- << EOF
 {
 	"jobRunId": "1234",
 	"data": {
-		"match_id_or_slug": "virtus-pro-vs-infamous-2019-08-17",
+		"match_id_or_slug": "virtus-pro-vs-infamous-2019-08-17"
 	}
 }
 EOF
