@@ -7,7 +7,7 @@
 _Built with [Bridges](https://github.com/linkpoolio/bridges)._
 
 ## Description ##
-A simple chainlink external adapter, allowing smart contracts to fetch esports match results.  
+A simple Chainlink external adapter, allowing smart contracts to fetch esports match results.  
 
 Supported leagues
 
