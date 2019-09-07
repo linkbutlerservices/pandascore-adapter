@@ -1,4 +1,4 @@
-# Pandascore match result adapter #
+# Pandascore esports match result adapter #
 
 **Author:** Link Butler  
 **Author URI:** https://link-butler.com  
