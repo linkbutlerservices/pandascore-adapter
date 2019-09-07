@@ -1,4 +1,4 @@
-# Pandascore esports match results chainlink adapter #
+# Pandascore esports match results Chainlink adapter #
 
 **Author:** Link Butler  
 **Author URI:** https://link-butler.com  
