@@ -42,27 +42,31 @@ func (av *PandaScore) Run(h *bridge.Helper) (interface{}, error) {
 			if !!isDraw{
 				matchResult = "drw"
 			}
-		} else if isForfeit, ok := response["forfeit"].(bool); ok {
+		}
+
+		if isForfeit, ok := response["forfeit"].(bool); ok {
 			if isForfeit{
 				matchResult = "ff"
 			}
-		} else if winner , ok := response["winner"]; ok {
+		}
+
+		if winner , ok := response["winner"]; ok {
 			if(winner != nil){
 				matchResult = "win"
 			}
 		}
 
-		if winnerId, ok := response["winner_id"].(int); ok {
-			matchWinnerId = strconv.Itoa(winnerId)
+		if winnerId, ok := response["winner_id"].(float64); ok {
+			matchWinnerId = floatToString(winnerId)
 		}
 
-		if numberOfGames, ok := response["number_of_games"].(int); ok {
-			matchNumberOfGames = strconv.Itoa(numberOfGames)
+		if numberOfGames, ok := response["number_of_games"].(float64); ok {
+			matchNumberOfGames = floatToString(numberOfGames)
 		}
 
-		if winner, ok := response["winner"]; ok {
+		if winner, ok := response["winner"].(map[string]interface{}); ok {
 			if winner != nil {
-				if acronym, ok := response["acronym"].(string); ok {
+				if acronym, ok := winner["acronym"].(string); ok {
 					matchWinnerAcronym = acronym
 				}
 			}
@@ -73,6 +77,11 @@ func (av *PandaScore) Run(h *bridge.Helper) (interface{}, error) {
 
 	return result,err
 }
+
+func floatToString(input_num float64) string {
+	return strconv.FormatFloat(input_num, 'f', 0, 64)
+}
+
 
 func (av *PandaScore) Opts() *bridge.Opts {
 	return &bridge.Opts{
