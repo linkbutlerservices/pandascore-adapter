@@ -1,4 +1,4 @@
-# Pandascore esports match result adapter #
+# Customizer Custom Controls #
 
 **Author:** Link Butler  
 **Author URI:** https://link-butler.com  
@@ -53,12 +53,12 @@ Result :
 ```
 ##### Request with curl
 ```
-curl -X POST -H 'Content-Type: application/json' http://localhost:8080 \
+curl -X POST -H 'Content-Type: application/json' \
 -d @- << EOF
 {
 	"jobRunId": "1234",
 	"data": {
-		"match_id_or_slug": "virtus-pro-vs-infamous-2019-08-17"
+		"match_id_or_slug": "virtus-pro-vs-infamous-2019-08-17",
 	}
 }
 EOF
@@ -92,7 +92,38 @@ API_KEY=apikey ./pandascore-adapter
 ```
 
 #### Docker
-##### Run the container:
+#####Run the container:
 ```
-docker run -it -e API_KEY=apikey -p 8080:8080 linkbutler/pandascore-adapter
+docker run -it -e API_KEY=apikey -p 8080:8080 linkbutlerservices/pandascore-adapter
 ```
+
+#### Chainlink node
+1. create a bridge with the name **pandascore**    
+2. create a job with the following jobSpec
+```json
+{
+  "initiators": [
+    {
+      "type": "runlog",
+      "params": {
+        "address": "ORACLE_CONTRACT"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "type": "pandascore"
+    },
+    {
+      "type": "copy"
+    },
+    {
+      "type": "ethbytes32"
+    },
+    {
+      "type": "ethtx"
+    }
+  ]
+}
+```
+
