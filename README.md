@@ -1,4 +1,4 @@
-# Customizer Custom Controls #
+# Pandascore adapter #
 
 **Author:** Link Butler  
 **Author URI:** https://link-butler.com  
