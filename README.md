@@ -1,4 +1,4 @@
-# Pandascore adapter #
+# Pandascore match result adapter #
 
 **Author:** Link Butler  
 **Author URI:** https://link-butler.com  
