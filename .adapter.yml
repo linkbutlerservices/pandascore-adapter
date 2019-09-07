@@ -1,0 +1,12 @@
+name: PandaScore
+description: Adapter that connects Chainlink nodes to the PandaScore match result web service
+node_identifier: pandascore
+platforms:
+  - Docker
+  - AWS Lambda
+  - GCP Functions
+data_sources:
+  - name: PandaScore
+    url: https://pandascore.co/
+parameters:
+  - match_id_or_slug
